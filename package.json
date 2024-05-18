@@ -1,0 +1,26 @@
+{
+  "name": "cse341-sp24-project2",
+  "version": "1.0.0",
+  "description": "Project 2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnastasiaYazvinskaya/cse341-sp24-Project2.git"
+  },
+  "author": "Anastasia Yazvinskaya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnastasiaYazvinskaya/cse341-sp24-Project2/issues"
+  },
+  "homepage": "https://github.com/AnastasiaYazvinskaya/cse341-sp24-Project2#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.6.2",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.0"
+  }
+}
