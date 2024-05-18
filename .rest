@@ -1,0 +1,59 @@
+#L02
+###
+GET http://localhost:3000/ HTTP/1.1
+###
+GET https://cse341-sp24-project2.onrender.com HTTP/1.1
+
+
+### Get All
+GET http://localhost:3000/cart HTTP/1.1
+### Get one
+GET http://localhost:3000/cart/64861d6ea2f45b356e0249b7 HTTP/1.1
+### Add one
+POST http://localhost:3000/cart HTTP/1.1
+content-type: application/json
+
+{
+    "itemName": "item1",
+    "price": "1",
+    "amount": "1",
+    "itemDescription": "item 1"
+}
+### Update one
+PUT http://localhost:3000/cart/6648e62fda57b85fcd234742 HTTP/1.1
+content-type: application/json
+
+{
+    "itemName": "item2",
+    "price": "2",
+    "amount": "2",
+    "itemDescription": "item 2"
+}
+###
+DELETE http://localhost:3000/cart/6648e76fd51578ccdedb949b HTTP/1.1
+
+
+### Get all
+GET https://cse341-sp24-project2.onrender.com/cart HTTP/1.1
+### Get one
+GET https://cse341-sp24-project2.onrender.com/cart/64861d6ea2f45b356e0249b7 HTTP/1.1
+### Add one
+POST http://cse341-sp24-project2.onrender.com/cart HTTP/1.1
+content-type: application/json
+
+{
+    "itemName": "item1",
+    "price": "1",
+    "amount": "1",
+    "itemDescription": "item 1"
+}
+### Update one
+Put http://cse341-sp24-project2.onrender.com/cart/64863a1b58a1d821bf18c26b HTTP/1.1
+content-type: application/json
+
+{
+    "itemName": "item2",
+    "price": "2",
+    "amount": "2",
+    "itemDescription": "item 2"
+}
