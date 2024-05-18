@@ -5,8 +5,8 @@ const doc = {
     title: 'Cart API',
     description: 'Cart API',
   },
-  host: 'cse341-sp24-project2.onrender.com',
-  schemes: ['https', 'http'],
+  host: 'localhost:3001',
+  schemes: ['http', 'https'],
 };
 
 const outputFile = './swagger.json';
