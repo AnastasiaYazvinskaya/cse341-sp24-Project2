@@ -5,11 +5,11 @@
     "description": "Cart API",
     "version": "1.0.0"
   },
-  "host": "localhost:3001",
+  "host": "cse341-sp24-project2.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/": {
