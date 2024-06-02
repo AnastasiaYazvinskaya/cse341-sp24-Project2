@@ -1,12 +1,12 @@
-#L02
+# Main page
 ###
-GET http://localhost:3000/ HTTP/1.1
+GET http://localhost:3001/ HTTP/1.1
 ###
 GET https://cse341-sp24-project2.onrender.com HTTP/1.1
 
 
-### Get All
-GET http://localhost:3000/cart HTTP/1.1
+### 404 error page (Not found page)
+GET http://localhost:3001/cart HTTP/1.1
 ### Get one
 GET http://localhost:3000/cart/64861d6ea2f45b356e0249b7 HTTP/1.1
 ### Add one
