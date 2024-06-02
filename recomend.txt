@@ -1,0 +1,12 @@
+npm init
+
+npm i express
+npm i mongodb
+npm i dotenv
+npm i swagger-ui-express
+npm i swagger-autogen
+
+npm install body-parser
+npm install express-validator cors
+
+cse341-sp24-project2.onrender.com
