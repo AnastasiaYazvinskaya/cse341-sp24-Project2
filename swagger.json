@@ -5,11 +5,11 @@
     "description": "Cart API",
     "version": "1.0.0"
   },
-  "host": "cse341-sp24-project2.onrender.com",
+  "host": "localhost:3001",
   "basePath": "/",
   "schemes": [
-    "https",
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/": {
@@ -25,10 +25,20 @@
         }
       }
     },
-    "/cart/": {
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/users/": {
       "get": {
         "tags": [
-          "Cart"
+          "Users"
         ],
         "description": "",
         "produces": [
@@ -42,7 +52,7 @@
       },
       "post": {
         "tags": [
-          "Cart"
+          "Users"
         ],
         "description": "",
         "parameters": [
@@ -52,17 +62,14 @@
             "schema": {
               "type": "object",
               "properties": {
-                "name": {
-                  "example": "Item name"
+                "username": {
+                  "example": "any"
                 },
-                "price": {
-                  "example": "1"
+                "email": {
+                  "example": "any"
                 },
-                "amount": {
-                  "example": "1"
-                },
-                "description": {
-                  "example": "Any description"
+                "password": {
+                  "example": "any"
                 }
               }
             }
@@ -78,10 +85,10 @@
         }
       }
     },
-    "/cart/{id}": {
+    "/users/{id}": {
       "get": {
         "tags": [
-          "Cart"
+          "Users"
         ],
         "description": "",
         "produces": [
@@ -103,7 +110,7 @@
       },
       "put": {
         "tags": [
-          "Cart"
+          "Users"
         ],
         "description": "",
         "parameters": [
@@ -119,17 +126,14 @@
             "schema": {
               "type": "object",
               "properties": {
-                "name": {
-                  "example": "Item name"
+                "username": {
+                  "example": "any"
                 },
-                "price": {
-                  "example": "1"
+                "email": {
+                  "example": "any"
                 },
-                "amount": {
-                  "example": "1"
-                },
-                "description": {
-                  "example": "Any description"
+                "password": {
+                  "example": "any"
                 }
               }
             }
@@ -146,7 +150,339 @@
       },
       "delete": {
         "tags": [
-          "Cart"
+          "Users"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/workouts/{userId}": {
+      "get": {
+        "tags": [
+          "Workouts"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/workouts/id/{id}": {
+      "get": {
+        "tags": [
+          "Workouts"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/workouts/": {
+      "post": {
+        "tags": [
+          "Workouts"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "example": "any"
+                },
+                "date": {
+                  "example": "any"
+                },
+                "duration": {
+                  "example": "any"
+                },
+                "type": {
+                  "example": "any"
+                },
+                "caloriesBurned": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/workouts/{id}": {
+      "put": {
+        "tags": [
+          "Workouts"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "example": "any"
+                },
+                "date": {
+                  "example": "any"
+                },
+                "duration": {
+                  "example": "any"
+                },
+                "type": {
+                  "example": "any"
+                },
+                "caloriesBurned": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Workouts"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/meals/{userId}": {
+      "get": {
+        "tags": [
+          "Meals"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/meals/id/{id}": {
+      "get": {
+        "tags": [
+          "Meals"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/meals/": {
+      "post": {
+        "tags": [
+          "Meals"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "example": "any"
+                },
+                "date": {
+                  "example": "any"
+                },
+                "time": {
+                  "example": "any"
+                },
+                "mealType": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "notes": {
+                  "example": "any"
+                },
+                "caloriesIntake": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/meals/{id}": {
+      "put": {
+        "tags": [
+          "Meals"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "example": "any"
+                },
+                "date": {
+                  "example": "any"
+                },
+                "time": {
+                  "example": "any"
+                },
+                "mealType": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "notes": {
+                  "example": "any"
+                },
+                "caloriesIntake": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Meals"
         ],
         "description": "",
         "parameters": [
